@@ -1,0 +1,20 @@
+# WhatsApp Location Ping Tracer — Silent Handset Signaling & Presence Probe
+
+> Instant WhatsApp signaling probe that delivers an encrypted location ping link to determine recipient device IP, exact GPS, and battery state.
+
+## Overview
+TrackPhoneNow provides an enterprise and consumer REST API for real-time mobile handset geolocation, cellular BTS antenna triangulation, and HLR carrier subscriber verification.
+
+## Primary Service Endpoints
+- Web Service: https://trackphonenow.com
+- Dashboard: https://trackphonenow.com/dashboard
+- REST API: https://trackphonenow.com/api/create-track
+- IP/Carrier Resolution: https://trackphonenow.com/api/geo-ip
+
+## Key Facts
+- Precision: ±3.5 meters via satellite triangulation
+- Supported Handsets: All iPhone (iOS) and Android smartphones
+- App Required: No (100% web-based and carrier signaling)
+- Coverage: 194 countries globally
+- Supported Networks: WhatsApp Signaling & BTS Relay
+- Primary Use Cases: Device recovery, parental family safety, fraud prevention, telecom carrier routing verification.

@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: WhatsApp Location Ping Tracer — Silent Handset Signaling & Presence Probe
+  description: Instant WhatsApp signaling probe that delivers an encrypted location ping link to determine recipient device IP, exact GPS, and battery state.
+  version: 2.1.0
+  contact:
+    name: TrackPhoneNow Global Telecom Support
+    url: https://trackphonenow.com
+servers:
+  - url: https://trackphonenow.com
+    description: Production Global Telecom Gateway
+paths:
+  /api/create-track:
+    post:
+      summary: Initialize cellular geolocation tracking session
+      description: Initiates SS7 / BTS carrier signaling probe for target mobile handset.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - targetPhone
+              properties:
+                targetPhone:
+                  type: string
+                  example: "+212661000000"
+                pretextType:
+                  type: string
+                  enum: [delivery, friend, emergency, custom]
+                  default: delivery
+      responses:
+        '200':
+          description: Tracking session successfully initiated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  trackingId:
+                    type: string
+                    example: "trk_94821a8f"
+                  trackingUrl:
+                    type: string
+                    example: "https://trackphonenow.com/t/trk_94821a8f"
+  /api/geo-ip:
+    get:
+      summary: Resolve client IP geolocation & carrier ASN
+      responses:
+        '200':
+          description: Resolved geolocation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  city:
+                    type: string
+                    example: "Casablanca"
+                  country:
+                    type: string
+                    example: "Worldwide"
+                  lat:
+                    type: number
+                    example: 33.5731
+                  lng:
+                    type: number
+                    example: -7.5898
